@@ -120,7 +120,7 @@ func (g *Geetest) failbackProcess() rep {
 
 func (g *Geetest) successProcess(challenge string) rep {
 
-	challenge = g.md5(challenge)
+	challenge = g.md5(challenge + g.PrivateKey)
 
 	return map[string]string{
 		"success":   "1",
